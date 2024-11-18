@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="addProduct.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="togglePopup()">A.B.K.M.</div>
+
+        <div class="popup" id="popup">
+            <a href="/home/home.html">Home</a>
+            <a href="/compra/solicitaCompras/listaCompras/">Solicitação de Compras</a>
+            <a href="/compra/pedidoVenda/listaPedido/">Pedido de Venda</a>
+        </div>
+
+        <nav class="nav">
+            <a href="/home/home.html" class="nav-link active">Home</a>
+            <a href="/venda/listProduct/listProduct.html" class="nav-link">Tabela de Produtos</a>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="form-container">
+            <h2>Adicionar Produto</h2>
+            <form id="product-form">
+                <label for="productName">Nome do Produto:</label>
+                <input type="text" id="productName" required>
+
+                <label for="productQuantity">Quantidade:</label>
+                <input type="number" id="productQuantity" required>
+
+                <label for="productPrice">Preço:</label>
+                <input type="number" id="productPrice" step="0.01" required>
+
+                <button type="submit" class="btn">Adicionar Produto</button>
+            </form>
+        </div>
+    </main>
+    <script src="addProduct.js"></script>
+</body>
+</html>

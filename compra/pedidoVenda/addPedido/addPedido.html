@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pedido de Venda</title>
+    <link rel="stylesheet" href="addPedido.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="togglePopup()">A.B.K.M.</div>
+
+            <div class="popup" id="popup">
+                <a href="/home/home.html">Home</a>
+                <a href="/compra/solicitaCompras/listaCompras/listaProduto.html">Solicitação de Compras</a>
+                <a href="/venda/listProduct/listProduct.html">Vendas</a>
+            </div>
+
+            <nav>
+                <a href="/home/home.html" class="nav-link">Home</a>
+                <a href="../listaPedido/listaPedido.html" class="nav-link">Tabela de Pedidos de Venda</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="pedido-venda" class="tab-content active">
+            <h2>Cadastro de Pedido de Venda</h2>
+            <form id="pedido-form">
+                <label for="nomeEmpresa">Nome da Empresa Solicitante</label>
+                <input type="text" id="nomeEmpresa" required>
+
+                <label for="cnpjFornecedor">CNPJ da Empresa Fornecedora</label>
+                <input type="text" id="cnpjFornecedor" required>
+
+                <label for="descricaoProdutos">Descrição dos Produtos/Serviços Solicitados</label>
+                <textarea id="descricaoProdutos" required></textarea>
+
+                <label for="quantidadeProdutos">Número de Produtos/Serviços Solicitados</label>
+                <input type="number" id="quantidadeProdutos" required>
+
+                <label for="prazoEntrega">Prazo de Entrega</label>
+                <input type="date" id="prazoEntrega" required>
+
+                <label for="dataPedido">Data do Pedido</label>
+                <input type="date" id="dataPedido" required>
+
+                <label for="preco">Preço</label>
+                <input type="number" id="preco" step="0.01" required>
+
+                <label for="condicoesPagamento">Condições e Prazo de Pagamento</label>
+                <textarea id="condicoesPagamento" required></textarea>
+
+                <button type="submit">Adicionar Pedido</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="addPedido.js"></script>
+</body>
+</html>

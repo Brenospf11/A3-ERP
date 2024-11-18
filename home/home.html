@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Compras e Vendas</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="togglePopup()">A.B.K.M.</div>
+
+        <div class="popup" id="popup">
+            <a href="/venda/listProduct/listProduct.html">Vendas</a>
+            <a href="/compra/solicitaCompras/listaCompras/listaProduto.html">Solicitação de Compras</a>
+            <a href="/compra/pedidoVenda/listaPedido/listaPedido.html">Pedido de Venda</a>
+        </div>
+
+        <nav class="nav">
+            <a href="/venda/listProduct/listProduct.html" class="nav-link active">Vendas</a>
+            <a href="/compra/solicitaCompras/listaCompras/listaProduto.html" class="nav-link">Solicitação de Compras</a>
+            <a href="/compra/pedidoVenda/listaPedido/listaPedido.html" class="nav-link">Pedido de Venda</a>
+        </nav>
+
+        <div class="profile-icon" onclick="toggleProfilePopup()">
+            <span>Perfil</span>
+            <div class="profile-popup" id="profilePopup">
+                <a href="#" onclick="logout()">Sair</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="carousel">
+            <button class="carousel-btn left" onclick="showSlide(0)">&#9664;</button>
+
+            <div class="carousel-slide" id="slide-vendas">
+                <h2>Vendas</h2>
+                <p>Bem-vindo à nossa Página de Vendas, uma ferramenta integrada ao nosso sistema ERP, desenvolvida para maximizar a eficiência e o controle das suas operações comerciais. Aqui, você encontra tudo o que precisa para gerenciar suas vendas de forma ágil e estratégica, garantindo uma experiência de excelência para seus clientes.</p>
+                <button class="btn" onclick="window.location.href='/venda/listProduct/listProduct.html'">Entrar</button>
+            </div>
+
+            <div class="carousel-slide" id="slide-compras">
+                <h2>Compras</h2>
+                <p>Bem-vindo à nossa Página de Compras, um ambiente totalmente integrado ao nosso sistema ERP, projetado para facilitar e otimizar o processo de aquisição de produtos e serviços na sua empresa. Aqui, você encontra tudo o que precisa para gerir suas compras de forma eficiente, segura e transparente.</p>
+                <button class="btn" onclick="window.location.href='/compra/pedidoVenda/listaPedido/listaPedido.html'">Entrar</button>
+            </div>
+
+            <button class="carousel-btn right" onclick="showSlide(1)">&#9654;</button>
+        </div>
+    </main>
+    <script src="home.js"></script>
+</body>
+</html>

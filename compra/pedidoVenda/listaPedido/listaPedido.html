@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Pedidos de Venda</title>
+    <link rel="stylesheet" href="listaPedido.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="togglePopup()">A.B.K.M.</div>
+
+            <div class="popup" id="popup">
+                <a href="/home/home.html">Home</a>
+                <a href="/compra/solicitaCompras/listaCompras/listaProduto.html">Solicitação de Compras</a>
+                <a href="/venda/listProduct/listProduct.html">Vendas</a>
+            </div>
+
+            <nav>
+                <a href="/home/home.html">Home</a>
+                <a href="../addPedido/addPedido.html">Adicionar Pedido de Venda</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="lista-pedidos" class="tab-content active">
+            <h2>Tabela de Pedidos de Venda</h2>
+            <table id="pedidosTable">
+                <thead>
+                    <tr>
+                        <th>Data do Pedido</th>
+                        <th>Nome da Empresa</th>
+                        <th>CNPJ</th>
+                        <th>Descrição</th>
+                        <th>Quantidade</th>
+                        <th>Prazo de Entrega</th>
+                        <th>Preço</th>
+                        <th>Condições de Pagamento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="listaPedido.js"></script>
+</body>
+</html>

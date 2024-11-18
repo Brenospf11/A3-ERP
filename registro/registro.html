@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Conta</title>
+  <link rel="stylesheet" href="/registro/registro.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">A.B.K.M.</h1>
+  </header>
+
+  <main class="main">
+    <div class="form-box">
+      <h2>Criar Conta</h2>
+      <form id="register-form">
+        <div class="input-group">
+          <input type="text" id="fullname" name="fullname" placeholder="Nome Completo" required>
+        </div>
+        <div class="input-group">
+          <input type="date" id="birthdate" name="birthdate" placeholder="Data de Nascimento" required>
+        </div>
+        <div class="input-group phone-group">
+          <span class="phone-prefix">+55</span>
+          <input type="tel" id="phone" name="phone" placeholder="Telefone" required>
+        </div>
+        <div class="input-group">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" name="password" placeholder="Senha" required>
+        </div>
+        <div class="input-group">
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Repita a Senha" required>
+        </div>
+        <button type="submit" class="btn">Criar</button>
+      </form>
+      <p class="form-text">Já possui uma conta? <a href="/index.html">Acesse aqui</a></p>
+    </div>
+  </main>
+
+  <script src="/registro/registro.js"></script>
+</body>
+</html>

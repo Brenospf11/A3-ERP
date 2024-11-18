@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Solicitações</title>
+    <link rel="stylesheet" href="listaProduto.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="togglePopup()">A.B.K.M.</div>
+
+        <div class="popup" id="popup">
+            <a href="/home/home.html">Home</a>
+            <a href="/compra/pedidoVenda/listaPedido/listaPedido.html">Pedido de Venda</a>
+            <a href="/venda/listProduct/listProduct.html">Vendas</a>
+        </div>
+
+        <nav class="nav">
+            <a href="../addItem-compras/addItem-compras.html" class="nav-link">Adicionar Solicitação</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="table-container">
+            <h2>Tabela de Solicitações</h2>
+            <table id="request-table">
+                <thead>
+                    <tr>
+                        <th>Dt.Emissão</th>
+                        <th>Dt.Entrega Desejada</th>
+                        <th>Solicitante</th>
+                        <th>Centro de Custo</th>
+                        <th>Elemento de Custo</th>
+                        <th>Contexto da Solicitação</th>
+                        <th>Produtos ou Serviços Solicitados</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button class="add-product-btn" onclick="window.location.href='../addItem-compras/addItem-compras.html'">Adicionar Solicitação</button>
+        </div>
+    </main>
+    <script src="listaProduto.js"></script>
+</body>
+</html>
