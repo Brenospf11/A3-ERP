@@ -1,8 +1,8 @@
 document.getElementById('request-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const issueDate = document.getElementById('issue-date').value;
-    const deliveryDate = document.getElementById('delivery-date').value;
+    const issueDate = formatDate(document.getElementById('issue-date').value);
+    const deliveryDate = formatDate(document.getElementById('delivery-date').value);
     const requesterName = document.getElementById('requester-name').value;
     const costCenter = document.getElementById('cost-center').value;
     const costElement = document.getElementById('cost-element').value;
@@ -52,3 +52,8 @@ function closeConfirmationPopup() {
     const popup = document.getElementById('popup-confirmation');
     popup.style.display = 'none';
 }
+
+function formatDate(dateString) {
+    const [year, month, day] = dateString.split("-");
+    return `${day}/${month}/${year}`;
+  }

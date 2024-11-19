@@ -6,8 +6,8 @@ document.getElementById('pedido-form').addEventListener('submit', (event) => {
         cnpjFornecedor: document.getElementById('cnpjFornecedor').value,
         descricaoProdutos: document.getElementById('descricaoProdutos').value,
         quantidadeProdutos: document.getElementById('quantidadeProdutos').value,
-        prazoEntrega: document.getElementById('prazoEntrega').value,
-        dataPedido: document.getElementById('dataPedido').value,
+        prazoEntrega: formatDate(document.getElementById('prazoEntrega').value),
+        dataPedido: formatDate(document.getElementById('dataPedido').value),
         preco: document.getElementById('preco').value,
         condicoesPagamento: document.getElementById('condicoesPagamento').value
     };
@@ -24,3 +24,8 @@ function togglePopup() {
     const popup = document.getElementById('popup');
     popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
 }
+
+function formatDate(dateString) {
+    const [year, month, day] = dateString.split("-");
+    return `${day}/${month}/${year}`;
+  }  
