@@ -2,7 +2,7 @@ let currentSlide = 0;
 
 function showSlide(index) {
     const slides = document.querySelectorAll('.carousel-slide');
-    
+
     slides[currentSlide].classList.remove('active');
     currentSlide = index;
     slides[currentSlide].classList.add('active');
@@ -17,15 +17,15 @@ function togglePopup() {
     popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
 }
 
-// Função para alternar a exibição do pop-up de perfil
 function toggleProfilePopup() {
     const profilePopup = document.getElementById("profilePopup");
     profilePopup.style.display = profilePopup.style.display === "block" ? "none" : "block";
 }
 
 function logout() {
+    localStorage.removeItem("user");
     alert("Você saiu da conta.");
-    window.location.href = "/index.html"; 
+    window.location.href = "/index.html";
 }
 
 document.addEventListener("click", function(event) {
@@ -37,3 +37,23 @@ document.addEventListener("click", function(event) {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const profilePopup = document.getElementById("profilePopup");
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+        profilePopup.innerHTML = `
+            <p><strong>Nome:</strong> ${user.fullname}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Data de Nascimento:</strong> ${user.birthdate}</p>
+            <p><strong>Telefone:</strong> ${user.phone}</p>
+            <a href="#" onclick="logout()"><strong>Sair</strong></a>
+        `;
+    } else {
+        profilePopup.innerHTML = `
+            <p>Nenhum usuário conectado.</p>
+            <a href="/registro.html">Registrar-se</a>
+        `;
+    }
+});

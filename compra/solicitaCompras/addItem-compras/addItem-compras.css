@@ -34,6 +34,7 @@ body, html {
     color: white;
     text-decoration: none;
     font-size: 1em;
+    padding: 5px;
 }
 
 .main-content {
