@@ -26,11 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
             row.appendChild(totalCell);
 
             const actionsCell = document.createElement('td');
+            actionsCell.classList.add('action-cell');
+
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Excluir';
             deleteButton.classList.add('delete-btn');
             deleteButton.onclick = () => deleteProduct(index);
             actionsCell.appendChild(deleteButton);
+
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Alterar';
+            editButton.classList.add('edit-btn');
+            editButton.onclick = () => editProduct(index);
+            actionsCell.appendChild(editButton);
+
             row.appendChild(actionsCell);
 
             tableBody.appendChild(row);
@@ -39,9 +48,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function deleteProduct(index) {
         products.splice(index, 1);
+        localStorage.setItem('products', JSON.stringify(products));
+        renderTable();
+    }
+
+    function editProduct(index) {
+        const product = products[index];
+
+        const newName = prompt('Novo nome do produto:', product.name);
+        const newQuantity = prompt('Nova quantidade:', product.quantity);
+        const newPrice = prompt('Novo preço:', product.price);
+
+        products[index] = {
+            name: newName || product.name,
+            quantity: parseInt(newQuantity) || product.quantity,
+            price: parseFloat(newPrice) || product.price,
+        };
 
         localStorage.setItem('products', JSON.stringify(products));
-
         renderTable();
     }
 
@@ -52,4 +76,3 @@ function togglePopup() {
     const popup = document.getElementById('popup');
     popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
 }
-
